@@ -287,40 +287,29 @@
                 {
                     "_type": "Return",
                     "col_offset": 4,
-                    "end_col_offset": 46,
+                    "end_col_offset": 40,
                     "end_lineno": 9,
                     "lineno": 9,
                     "value": {
                         "_type": "BinOp",
                         "col_offset": 11,
-                        "end_col_offset": 46,
+                        "end_col_offset": 40,
                         "end_lineno": 9,
                         "left": {
                             "_type": "BinOp",
                             "col_offset": 11,
-                            "end_col_offset": 30,
+                            "end_col_offset": 24,
                             "end_lineno": 9,
                             "left": {
-                                "_type": "Attribute",
-                                "attr": "fname",
+                                "_type": "Name",
                                 "col_offset": 11,
                                 "ctx": {
                                     "_type": "Load"
                                 },
-                                "end_col_offset": 24,
+                                "end_col_offset": 18,
                                 "end_lineno": 9,
-                                "lineno": 9,
-                                "value": {
-                                    "_type": "Name",
-                                    "col_offset": 11,
-                                    "ctx": {
-                                        "_type": "Load"
-                                    },
-                                    "end_col_offset": 18,
-                                    "end_lineno": 9,
-                                    "id": "student",
-                                    "lineno": 9
-                                }
+                                "id": "student",
+                                "lineno": 9
                             },
                             "lineno": 9,
                             "op": {
@@ -328,8 +317,8 @@
                             },
                             "right": {
                                 "_type": "Constant",
-                                "col_offset": 27,
-                                "end_col_offset": 30,
+                                "col_offset": 21,
+                                "end_col_offset": 24,
                                 "end_lineno": 9,
                                 "kind": null,
                                 "lineno": 9,
@@ -345,20 +334,20 @@
                         "right": {
                             "_type": "Attribute",
                             "attr": "lname",
-                            "col_offset": 33,
+                            "col_offset": 27,
                             "ctx": {
                                 "_type": "Load"
                             },
-                            "end_col_offset": 46,
+                            "end_col_offset": 40,
                             "end_lineno": 9,
                             "lineno": 9,
                             "value": {
                                 "_type": "Name",
-                                "col_offset": 33,
+                                "col_offset": 27,
                                 "ctx": {
                                     "_type": "Load"
                                 },
-                                "end_col_offset": 40,
+                                "end_col_offset": 34,
                                 "end_lineno": 9,
                                 "id": "student",
                                 "lineno": 9
@@ -369,7 +358,7 @@
             ],
             "col_offset": 0,
             "decorator_list": [],
-            "end_col_offset": 46,
+            "end_col_offset": 40,
             "end_lineno": 9,
             "lineno": 8,
             "name": "getFullName",

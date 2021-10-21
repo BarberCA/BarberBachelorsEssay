@@ -6,4 +6,4 @@ class Student:
         self.gpa = gpa
 
 def getFullName(student):
-    return student.fname + ' ' + student.lname
+    return student + ' ' + student.lname
