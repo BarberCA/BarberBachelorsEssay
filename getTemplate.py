@@ -2,21 +2,22 @@
 import templateCatalog as tcl
 import json
 
-def getTemplate(tree):
-    templateID = getTemplateID(tree)
-    argIDs = getArgumentIDs(tree)
-    argTypes = list()
-    argAttributes = list()
-    for a in argIDs:#Only does the last argument at the moment
+def getTemplate(tree, comments):
+    templateID = getTemplateID(tree)#Select template to use
+    argIDs = getArgumentIDs(tree)#Find names of each argument
+    argTypes = list()#List of type for each argument
+    argAttributes = list()#List of sets of attributes for each argument
+    for a in argIDs:#Find the types and any attributes of each argument
         argType = getArgType(a, tree)
-        if not argType:
+        if not argType: #If no argument type could be identified, set type to unknown
             argType = "Unknown"
         argTypes.append(argType)
         attrSet = findAttributes(a, tree)
         argAttributes.append(attrSet)
+    #Call the method to create the template using the information gathered
     template = {
         'returnsExpected':
-            tcl.returnsExpectedTemplate(tree, argIDs, argTypes, argAttributes)
+            tcl.returnsExpectedTemplate(tree, comments, argIDs, argTypes, argAttributes)
     }[templateID]
     return template
 
@@ -37,16 +38,15 @@ def getArgumentIDs(tree):
 #Identifies any attributes id uses in the tree.
 def findAttributes(id, tree):
     attributes = set()
-    if isinstance(tree, list):
+    if isinstance(tree, list):#List case, look at all elements of the list
         for element in range(len(tree)):
             attributes = set.union(findAttributes(id, tree[element]), attributes)
-    elif isinstance(tree, dict):
+    elif isinstance(tree, dict):#Dict case
         if tree.get('_type') == 'Attribute':
             if tree.get('value').get('id') == id:
                 attributes.add(tree.get('attr'))
         for element in tree:
             attributes = set.union(findAttributes(id, tree[element]), attributes)
-
     return attributes
 
 #Attempts to infer the argument type of the input argID in the input tree

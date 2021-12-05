@@ -268,9 +268,9 @@
                     {
                         "_type": "arg",
                         "annotation": null,
-                        "arg": "student",
-                        "col_offset": 16,
-                        "end_col_offset": 23,
+                        "arg": "username",
+                        "col_offset": 22,
+                        "end_col_offset": 30,
                         "end_lineno": 8,
                         "lineno": 8,
                         "type_comment": null
@@ -287,81 +287,49 @@
                 {
                     "_type": "Return",
                     "col_offset": 4,
-                    "end_col_offset": 40,
+                    "end_col_offset": 37,
                     "end_lineno": 9,
                     "lineno": 9,
                     "value": {
                         "_type": "BinOp",
                         "col_offset": 11,
-                        "end_col_offset": 40,
+                        "end_col_offset": 37,
                         "end_lineno": 9,
                         "left": {
-                            "_type": "BinOp",
+                            "_type": "Constant",
                             "col_offset": 11,
-                            "end_col_offset": 24,
+                            "end_col_offset": 26,
                             "end_lineno": 9,
-                            "left": {
-                                "_type": "Name",
-                                "col_offset": 11,
-                                "ctx": {
-                                    "_type": "Load"
-                                },
-                                "end_col_offset": 18,
-                                "end_lineno": 9,
-                                "id": "student",
-                                "lineno": 9
-                            },
+                            "kind": null,
                             "lineno": 9,
-                            "op": {
-                                "_type": "Add"
-                            },
-                            "right": {
-                                "_type": "Constant",
-                                "col_offset": 21,
-                                "end_col_offset": 24,
-                                "end_lineno": 9,
-                                "kind": null,
-                                "lineno": 9,
-                                "n": " ",
-                                "s": " ",
-                                "value": " "
-                            }
+                            "n": "Welcome back ",
+                            "s": "Welcome back ",
+                            "value": "Welcome back "
                         },
                         "lineno": 9,
                         "op": {
                             "_type": "Add"
                         },
                         "right": {
-                            "_type": "Attribute",
-                            "attr": "lname",
-                            "col_offset": 27,
+                            "_type": "Name",
+                            "col_offset": 29,
                             "ctx": {
                                 "_type": "Load"
                             },
-                            "end_col_offset": 40,
+                            "end_col_offset": 37,
                             "end_lineno": 9,
-                            "lineno": 9,
-                            "value": {
-                                "_type": "Name",
-                                "col_offset": 27,
-                                "ctx": {
-                                    "_type": "Load"
-                                },
-                                "end_col_offset": 34,
-                                "end_lineno": 9,
-                                "id": "student",
-                                "lineno": 9
-                            }
+                            "id": "username",
+                            "lineno": 9
                         }
                     }
                 }
             ],
             "col_offset": 0,
             "decorator_list": [],
-            "end_col_offset": 40,
+            "end_col_offset": 37,
             "end_lineno": 9,
             "lineno": 8,
-            "name": "getFullName",
+            "name": "getWelcomeMessage",
             "returns": null,
             "type_comment": null
         }

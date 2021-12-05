@@ -5,5 +5,7 @@ class Student:
         self.lname = lname
         self.gpa = gpa
 
-def getFullName(student):
-    return student + ' ' + student.lname
+#Returns a welcome message addressing the user
+def getWelcomeMessage(username):
+    #Username is a string
+    return "Welcome back, " + username

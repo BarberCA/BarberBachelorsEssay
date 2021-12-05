@@ -1,21 +1,21 @@
 import ast, json, ast2json
 import getTemplate as gtl
+import getComments as gcm
 
-def main():#C:/Users/Carson Barber/Documents/Work/School/Bachelor's Essay/test.py
-    with open("sampleCode.py", 'r') as f:
+def main():
+    file_name = "sampleCode.py"
+    with open(file_name, 'r') as f:
         astTree = ast.parse(f.read())
         f.close
     jsonTree = ast2json.ast2json(astTree)
-    with open("data.json", 'w') as f:
-        f.write(json.dumps(jsonTree, indent=4))
-        f.close
-    with open("data.json", 'r') as f:
-        tree = json.load(f)
-        f.close
-    #argument = tree['body'][1]['args']['args'][0]['arg']
-    #argType = tree['body'][1]['args']['args'][0]['_type']
+    dumped = json.dumps(jsonTree, indent=4)
+    tree = json.loads(dumped)
     funcTree = tree['body'][1]
-    template = gtl.getTemplate(funcTree)
+    funcStartLineNo = funcTree['lineno']
+    funcEndLineNo = funcTree['end_lineno']
+    prevComLines = 3#Number of lines before the function to extract comments from.
+    comments = gcm.getComments(file_name, funcStartLineNo-prevComLines, funcEndLineNo)
+    template = gtl.getTemplate(funcTree, comments)
     print(template)
     print("DONE")
 
